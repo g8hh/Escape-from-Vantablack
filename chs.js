@@ -49,15 +49,15 @@ var cnItems = {
     'Split the Photon interval in half': '将光子间隔一分为二',
     'The dimensions here are not made of antimatter. If they were, your face would have melted off years ago.': '这里的维度不是由反物质构成的。 如果是的话，你的脸在几年前就已经融化了。',
     'Triple Photon gain': '三重光子增益',
-    '': '',
-    '': '',
-    '': '',
-    '': '',
-    '': '',
-    '': '',
-    '': '',
-    '': '',
-    '': '',
+    'gets disemboweled': '被开膛破肚',
+    'If you can see this, why are you chilling on this menu? Cmon, press that button that says \"BEGIN\"!': '如果你能看到这个，你为什么对这个菜单不寒而栗？ 拜托，按下那个写着“开始”的按钮！',
+    'Just one more news ticker!': '又多了一个新闻自动收报机！',
+    'Reach 100,000,000 Total Photons to begin the process of Pair Production': '达到100,000,000光子总数，开始偶产生进程',
+    'Double Photon Upgrade 3\'s effect': '双光子升级3的效果',
+    'Annihilate an Electron for 1+ Charge': '消灭一个电子获得带1+电荷',
+    'Raise the Lumen effect': '提高流明效果',
+    'Photons boost their own gain': '光子提升自身增益',
+    'Pair Production requirement is divided by {{formatWhole(tmp.stre)}}, and Mind/Strength progress gain is multiplied by {{format(tmp.stre2)}}': '偶产生 需求除以{{formatWhole(tmp.stre)}}，心灵/力量 进度增益乘以{{format(tmp.stre2)}}',
     '': '',
     '': '',
     '': '',
@@ -173,7 +173,7 @@ var cnPrefix = {
     "Level ": "等级 ",
     "MIND: ": "心灵: ",
     "Multiply Photon gain by ": "将光子增益乘以",
-    "": "",
+    "Positrons: ": "正电子：",
     "": "",
     "": "",
     "": "",
@@ -231,6 +231,7 @@ var cnPostfix = {
 //需排除的，正则匹配
 var cnExcludeWhole = [
     /^(\d+)$/,
+    /^([\d\.]+)ms$/,
     /^([\d\.]+)e(\d+)$/,
     /^([\d\.]+)$/,
 ];
@@ -244,6 +245,7 @@ var cnExcludePostfix = [
 //原样输出的字段：(.+)
 //换行加空格：\n(.+)
 var cnRegReplace = new Map([
+    [/^([\d\.,]+) Photons$/, '$1 光子'],
     [/^Cost: (.+) Photons$/, '成本: $1 光子'],
     [/^Req: (.+) Lumens$/, '要求: $1 流明'],
     [/^You have (.+) points$/, '你有 $1 点数'],
